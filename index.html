@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags for character encoding and responsive viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Main container for calculator and history -->
+    <div class="container">
+      <!-- Calculator section -->
+      <div class="calculator">
+        <!-- Display area for showing current input and results -->
+        <div class="display" id="display"></div>
+        <!-- Grid of calculator buttons -->
+        <div class="buttons">
+          <!-- Number buttons -->
+          <button class="btn" data-value="1">1</button>
+          <button class="btn" data-value="2">2</button>
+          <button class="btn" data-value="3">3</button>
+          <!-- Operator buttons -->
+          <button class="btn operator" data-value="*">×</button>
+          <button class="btn operator" data-value="/">÷</button>
+
+          <button class="btn" data-value="4">4</button>
+          <button class="btn" data-value="5">5</button>
+          <button class="btn" data-value="6">6</button>
+          <button class="btn operator" data-value="+">+</button>
+          <button class="btn operator" data-value="-">-</button>
+
+          <button class="btn" data-value="7">7</button>
+          <button class="btn" data-value="8">8</button>
+          <button class="btn" data-value="9">9</button>
+          <button class="btn operator" data-value="%">%</button>
+          <button class="btn operator" data-value="^">^</button>
+
+          <!-- Special function buttons -->
+          <button class="btn" data-value=".">.</button>
+          <button class="btn" data-value="0">0</button>
+          <button class="btn backspace" id="backspace">&#9003;</button>
+          <button class="btn equal" id="equal">=</button>
+          <button class="btn clear" id="clear">C</button>
+        </div>
+      </div>
+
+      <!-- History section toggle button -->
+      <button id="toggle-history" class="toggle-history-btn">
+        Show History
+      </button>
+
+      <!-- History section for displaying calculation history -->
+      <div class="history-section" id="history-section" style="display: none">
+        <div class="history-header">
+          <h3>History</h3>
+          <button id="clear-history" class="clear-history-btn">
+            Clear History
+          </button>
+        </div>
+        <ul id="history"></ul>
+      </div>
+    </div>
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+  </body>
+</html>
