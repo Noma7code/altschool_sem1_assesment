@@ -1,0 +1,274 @@
+/* Base styles for the body */
+body {
+  background: #fff;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Main container styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  margin-top: 60px;
+}
+
+/* Calculator container styles */
+.calculator {
+  background: #282836;
+  border: 3px solid #ff5c33;
+  border-radius: 0px;
+  padding: 24px 24px 24px 24px;
+  box-sizing: border-box;
+  width: 400px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Display area styles */
+.display {
+  width: 100%;
+  height: 60px;
+  background: #393c6a;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+/* Button grid layout */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 64px);
+  grid-template-rows: repeat(4, 56px);
+  gap: 16px 12px;
+}
+
+/* Base button styles */
+.btn {
+  background: #3c3d4d;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Operator button styles */
+.btn.operator,
+.btn.equal,
+.btn.clear {
+  background: #ffa600;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Equal button specific styles */
+.btn.equal {
+  background: #b3b3b3;
+  color: #282836;
+  font-weight: bold;
+}
+
+/* Clear button specific styles */
+.btn.clear {
+  background: #b3b3b3;
+  color: #282836;
+  font-weight: bold;
+}
+
+/* Backspace button specific styles */
+.btn.backspace {
+  background: #b3b3b3;
+  color: #282836;
+  font-size: 1.3rem;
+}
+
+/* Button hover effects */
+.btn:hover {
+  background: #50516a;
+  transform: scale(1.05);
+}
+
+/* Operator button hover effects */
+.btn.operator:hover,
+.btn.equal:hover {
+  background: #ffb84d;
+}
+
+/* Equal button hover effects */
+.btn.equal:hover {
+  background: #d1d1d1;
+}
+
+/* Clear and backspace button hover effects */
+.btn.clear:hover,
+.btn.backspace:hover {
+  background: rgb(200, 16, 12);
+  color: white;
+}
+
+/* History toggle button styles */
+.toggle-history-btn {
+  margin-top: 18px;
+  background: #282836;
+  color: #fff;
+  border: 2px solid #ff5c33;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* History toggle button hover effects */
+.toggle-history-btn:hover {
+  background: #ff5c33;
+  color: #fff;
+}
+
+/* History section container styles */
+.history-section {
+  margin-top: 18px;
+  width: 400px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  padding: 16px 24px;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* History header styles */
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* Clear history button styles */
+.clear-history-btn {
+  background: #b3b3b3;
+  color: #282836;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+/* Clear history button hover effects */
+.clear-history-btn:hover {
+  background: #ff5c33;
+  color: #fff;
+}
+
+/* History list styles */
+#history {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+/* History list item styles */
+#history li {
+  color: #282836;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 500px) {
+  .container {
+    width: 100vw;
+    margin-top: 24px;
+    padding: 30px;
+  }
+  .calculator,
+  .history-section {
+    width: 90vw;
+    max-width: 400px;
+    min-width: 0px;
+    min-height: 0px;
+    height: auto;
+    padding: 10px 12px 20px 12px;
+    box-sizing: border-box;
+    margin-bottom: 0px;
+  }
+
+  /* Mobile button grid layout */
+  .buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 8px 6px;
+    margin-bottom: 0;
+  }
+  /* Mobile button styles */
+  .btn {
+    font-size: 1.1rem;
+    border-radius: 12px;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    width: 100%;
+    height: 10vw;
+    max-height: 48px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  /* Mobile display styles */
+  .display {
+    font-size: 1.2rem;
+    height: 32px;
+    padding: 0 4vw;
+    border-radius: 12px;
+    margin: 20px;
+  }
+  /* Mobile history toggle button styles */
+  .toggle-history-btn {
+    margin: 20px;
+    padding: 10px 18px;
+    width: auto;
+    max-width: 90vw;
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1rem;
+  }
+  /* Mobile history header styles */
+  .history-header h3 {
+    font-size: 1rem;
+  }
+  /* Mobile clear history button styles */
+  .clear-history-btn {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+}
